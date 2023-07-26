@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro Produto</title>
+</head>
+<body>
+    <main>
+        <h1>Cadastro de Produto</h1>
+        <br>
+        <form action="#" method="post" name="formProduct">
+            <label> Id:<br>
+                <input type="number" name="id" required>
+            </label>
+            <br>
+            <label> Nome do produto: <br>
+                <input type="text" name="produtoNome" required>
+            </label>
+            <br>
+            <label> Valor:<br>
+                <input type="number" name="valorProduto" required>
+            </label>
+            <br>
+            <label> Quantidade: <br>
+                <input type="number" name="quantidadeProduto" required>
+            </label>
+            <br>
+            <label> Validade: <br>
+                <input type="date" name="validadeProduto" required>
+            </label>
+            <br>
+            <button type="button" name="cadastraProduto" onclick="cadastrarProduto()">Cadastrar</button>
+        </form>
+    </main>
+
+    <div id="resultado"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

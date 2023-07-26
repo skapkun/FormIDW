@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Resultado</title>
+</head>
+<body>
+    <main>
+        <h1>Resultado</h1>
+        <br>
+        <div id="resultado"></div>
+       <br> <a href="index.html"><button><img src ="casa.png">  Voltar para início</button></a>
+    </main>
+
+    <script> 
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+ 
+        const nome = getParameterByName('nome');
+        const dataNascimento = getParameterByName('dataNascimento');
+ 
+        if (nome && dataNascimento) { 
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = `<b>Usuário cadastrado:</b><br><br><b>Nome:</b> ${nome}<br><b>Data de Nascimento:</b> ${dataNascimento}`;
+        } else { 
+            const id = getParameterByName('id');
+            const produtoNome = getParameterByName('produtoNome');
+            const valorProduto = getParameterByName('valorProduto');
+            const quantidadeProduto = getParameterByName('quantidadeProduto');
+            const validadeProduto = getParameterByName('validadeProduto');
+
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = `
+                <b>Produto cadastrado:</b><br><br>
+                <b>ID:</b> ${id}<br>
+                <b>Nome do produto:</b> ${produtoNome}<br>
+                <b>Valor:</b> R$ ${valorProduto}<br>
+                <b>Quantidade:</b> ${quantidadeProduto}<br>
+                <b>Validade:</b> ${validadeProduto}
+            `;
+        }
+       
+    </script>
+ 
+</body>
+</html>
